@@ -1,0 +1,93 @@
+﻿@model IEnumerable<AirportLogicTier.tbl_Flight>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class= "table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StopOver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            Airplan        
+        </th>
+        <th>
+            From
+        </th>
+        <th>
+           To
+        </th>
+        <th>
+           Company
+        </th>
+        <th>
+            Route
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td >
+            @Html.DisplayFor(modelItem => item.FlightNumber)
+        </td>
+        <td >
+            @Html.DisplayFor(modelItem => item.DepartureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StopOver)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Airplane.ModelNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Airport.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Airport1.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Company.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tbl_Route.idRoute)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idtbl_Flight }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idtbl_Flight }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idtbl_Flight })
+        </td>
+    </tr>
+}
+
+</table>
