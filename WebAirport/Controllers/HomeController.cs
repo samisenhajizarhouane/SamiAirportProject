@@ -18,7 +18,7 @@ namespace WebAirport.Controllers
         public ActionResult Index()
         {
             List<tbl_Flight> a = new List<tbl_Flight>();
-
+            //testCommit
            // var tbl_Flight = db.tbl_Flight.Include(t => t.tbl_Airplane).Include(t => t.tbl_Airport).Include(t => t.tbl_Airport1).Include(t => t.tbl_Company).Include(t => t.tbl_Route);
             foreach (var Flight in db.tbl_Flight)
             {
