@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_AirportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_Airplane">
+    <Key>
+      <PropertyRef Name="idtbl_Airplane" />
+    </Key>
+    <Property Name="idtbl_Airplane" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Capacity" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Flight" Relationship="Self.FK_tbl_Flight_tbl_Airplane" FromRole="tbl_Airplane" ToRole="tbl_Flight" />
+  </EntityType>
+  <EntityType Name="tbl_Airport">
+    <Key>
+      <PropertyRef Name="idtbl_Airport" />
+    </Key>
+    <Property Name="idtbl_Airport" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="idtbl_City" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_City" Relationship="Self.FK_tbl_Airport_tbl_City" FromRole="tbl_Airport" ToRole="tbl_City" />
+    <NavigationProperty Name="tbl_Flight" Relationship="Self.FK_tbl_Flight_tbl_Airport" FromRole="tbl_Airport" ToRole="tbl_Flight" />
+    <NavigationProperty Name="tbl_Flight1" Relationship="Self.FK_tbl_Flight_tbl_Airport1" FromRole="tbl_Airport" ToRole="tbl_Flight" />
+  </EntityType>
+  <EntityType Name="tbl_Booking">
+    <Key>
+      <PropertyRef Name="idtbl_Booking" />
+    </Key>
+    <Property Name="idtbl_Booking" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idtbl_Crew" Type="Int32" />
+    <Property Name="idtbl_Flight" Type="Int32" />
+    <NavigationProperty Name="tbl_Flight" Relationship="Self.FK_tbl_Booking_tbl_Flight" FromRole="tbl_Booking" ToRole="tbl_Flight" />
+    <NavigationProperty Name="tbl_Crew" Relationship="Self.FK_tbl_Booking_tbl_Passenger" FromRole="tbl_Booking" ToRole="tbl_Crew" />
+  </EntityType>
+  <EntityType Name="tbl_City">
+    <Key>
+      <PropertyRef Name="idtbl_City" />
+    </Key>
+    <Property Name="idtbl_City" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tbl_Airport" Relationship="Self.FK_tbl_Airport_tbl_City" FromRole="tbl_City" ToRole="tbl_Airport" />
+  </EntityType>
+  <EntityType Name="tbl_Company">
+    <Key>
+      <PropertyRef Name="idtbl_Company" />
+    </Key>
+    <Property Name="idtbl_Company" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Symbol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tbl_Flight" Relationship="Self.FK_tbl_Flight_tbl_Company" FromRole="tbl_Company" ToRole="tbl_Flight" />
+  </EntityType>
+  <EntityType Name="tbl_Crew">
+    <Key>
+      <PropertyRef Name="idtbl_Crew" />
+    </Key>
+    <Property Name="idtbl_Crew" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BirthdayDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CaptainCrew" Type="Boolean" />
+    <NavigationProperty Name="tbl_Booking" Relationship="Self.FK_tbl_Booking_tbl_Passenger" FromRole="tbl_Crew" ToRole="tbl_Booking" />
+  </EntityType>
+  <EntityType Name="tbl_Flight">
+    <Key>
+      <PropertyRef Name="idtbl_Flight" />
+    </Key>
+    <Property Name="idtbl_Flight" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlightNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FromCity" Type="Int32" Nullable="false" />
+    <Property Name="ToCity" Type="Int32" Nullable="false" />
+    <Property Name="DepartureDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ArrivalDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="idtbl_Airplane" Type="Int32" Nullable="false" />
+    <Property Name="idtbl_Company" Type="Int32" Nullable="false" />
+    <Property Name="StopOver" Type="Boolean" />
+    <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="idRoute" Type="Int32" />
+    <NavigationProperty Name="tbl_Airplane" Relationship="Self.FK_tbl_Flight_tbl_Airplane" FromRole="tbl_Flight" ToRole="tbl_Airplane" />
+    <NavigationProperty Name="tbl_Airport" Relationship="Self.FK_tbl_Flight_tbl_Airport" FromRole="tbl_Flight" ToRole="tbl_Airport" />
+    <NavigationProperty Name="tbl_Airport1" Relationship="Self.FK_tbl_Flight_tbl_Airport1" FromRole="tbl_Flight" ToRole="tbl_Airport" />
+    <NavigationProperty Name="tbl_Booking" Relationship="Self.FK_tbl_Booking_tbl_Flight" FromRole="tbl_Flight" ToRole="tbl_Booking" />
+    <NavigationProperty Name="tbl_Company" Relationship="Self.FK_tbl_Flight_tbl_Company" FromRole="tbl_Flight" ToRole="tbl_Company" />
+    <NavigationProperty Name="tbl_Route" Relationship="Self.FK_tbl_Flight_tbl_Route" FromRole="tbl_Flight" ToRole="tbl_Route" />
+    <Property Name="ArrivalAt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_Route">
+    <Key>
+      <PropertyRef Name="idRoute" />
+    </Key>
+    <Property Name="idRoute" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idtbl_Company" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tbl_Flight" Relationship="Self.FK_tbl_Flight_tbl_Route" FromRole="tbl_Route" ToRole="tbl_Flight" />
+  </EntityType>
+  <Association Name="FK_tbl_Flight_tbl_Airplane">
+    <End Role="tbl_Airplane" Type="Self.tbl_Airplane" Multiplicity="1" />
+    <End Role="tbl_Flight" Type="Self.tbl_Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Airplane">
+        <PropertyRef Name="idtbl_Airplane" />
+      </Principal>
+      <Dependent Role="tbl_Flight">
+        <PropertyRef Name="idtbl_Airplane" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Airport_tbl_City">
+    <End Role="tbl_City" Type="Self.tbl_City" Multiplicity="1" />
+    <End Role="tbl_Airport" Type="Self.tbl_Airport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_City">
+        <PropertyRef Name="idtbl_City" />
+      </Principal>
+      <Dependent Role="tbl_Airport">
+        <PropertyRef Name="idtbl_City" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Flight_tbl_Airport">
+    <End Role="tbl_Airport" Type="Self.tbl_Airport" Multiplicity="1" />
+    <End Role="tbl_Flight" Type="Self.tbl_Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Airport">
+        <PropertyRef Name="idtbl_Airport" />
+      </Principal>
+      <Dependent Role="tbl_Flight">
+        <PropertyRef Name="FromCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Flight_tbl_Airport1">
+    <End Role="tbl_Airport" Type="Self.tbl_Airport" Multiplicity="1" />
+    <End Role="tbl_Flight" Type="Self.tbl_Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Airport">
+        <PropertyRef Name="idtbl_Airport" />
+      </Principal>
+      <Dependent Role="tbl_Flight">
+        <PropertyRef Name="ToCity" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Booking_tbl_Flight">
+    <End Role="tbl_Flight" Type="Self.tbl_Flight" Multiplicity="0..1" />
+    <End Role="tbl_Booking" Type="Self.tbl_Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Flight">
+        <PropertyRef Name="idtbl_Flight" />
+      </Principal>
+      <Dependent Role="tbl_Booking">
+        <PropertyRef Name="idtbl_Flight" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Booking_tbl_Passenger">
+    <End Role="tbl_Crew" Type="Self.tbl_Crew" Multiplicity="0..1" />
+    <End Role="tbl_Booking" Type="Self.tbl_Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Crew">
+        <PropertyRef Name="idtbl_Crew" />
+      </Principal>
+      <Dependent Role="tbl_Booking">
+        <PropertyRef Name="idtbl_Crew" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Flight_tbl_Company">
+    <End Role="tbl_Company" Type="Self.tbl_Company" Multiplicity="1" />
+    <End Role="tbl_Flight" Type="Self.tbl_Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Company">
+        <PropertyRef Name="idtbl_Company" />
+      </Principal>
+      <Dependent Role="tbl_Flight">
+        <PropertyRef Name="idtbl_Company" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_Flight_tbl_Route">
+    <End Role="tbl_Route" Type="Self.tbl_Route" Multiplicity="0..1" />
+    <End Role="tbl_Flight" Type="Self.tbl_Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Route">
+        <PropertyRef Name="idRoute" />
+      </Principal>
+      <Dependent Role="tbl_Flight">
+        <PropertyRef Name="idRoute" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_AirportEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Airplane" EntityType="Self.tbl_Airplane" />
+    <EntitySet Name="tbl_Airport" EntityType="Self.tbl_Airport" />
+    <EntitySet Name="tbl_Booking" EntityType="Self.tbl_Booking" />
+    <EntitySet Name="tbl_City" EntityType="Self.tbl_City" />
+    <EntitySet Name="tbl_Company" EntityType="Self.tbl_Company" />
+    <EntitySet Name="tbl_Crew" EntityType="Self.tbl_Crew" />
+    <EntitySet Name="tbl_Flight" EntityType="Self.tbl_Flight" />
+    <EntitySet Name="tbl_Route" EntityType="Self.tbl_Route" />
+    <AssociationSet Name="FK_tbl_Flight_tbl_Airplane" Association="Self.FK_tbl_Flight_tbl_Airplane">
+      <End Role="tbl_Airplane" EntitySet="tbl_Airplane" />
+      <End Role="tbl_Flight" EntitySet="tbl_Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Airport_tbl_City" Association="Self.FK_tbl_Airport_tbl_City">
+      <End Role="tbl_City" EntitySet="tbl_City" />
+      <End Role="tbl_Airport" EntitySet="tbl_Airport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Flight_tbl_Airport" Association="Self.FK_tbl_Flight_tbl_Airport">
+      <End Role="tbl_Airport" EntitySet="tbl_Airport" />
+      <End Role="tbl_Flight" EntitySet="tbl_Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Flight_tbl_Airport1" Association="Self.FK_tbl_Flight_tbl_Airport1">
+      <End Role="tbl_Airport" EntitySet="tbl_Airport" />
+      <End Role="tbl_Flight" EntitySet="tbl_Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Booking_tbl_Flight" Association="Self.FK_tbl_Booking_tbl_Flight">
+      <End Role="tbl_Flight" EntitySet="tbl_Flight" />
+      <End Role="tbl_Booking" EntitySet="tbl_Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Booking_tbl_Passenger" Association="Self.FK_tbl_Booking_tbl_Passenger">
+      <End Role="tbl_Crew" EntitySet="tbl_Crew" />
+      <End Role="tbl_Booking" EntitySet="tbl_Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Flight_tbl_Company" Association="Self.FK_tbl_Flight_tbl_Company">
+      <End Role="tbl_Company" EntitySet="tbl_Company" />
+      <End Role="tbl_Flight" EntitySet="tbl_Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_Flight_tbl_Route" Association="Self.FK_tbl_Flight_tbl_Route">
+      <End Role="tbl_Route" EntitySet="tbl_Route" />
+      <End Role="tbl_Flight" EntitySet="tbl_Flight" />
+    </AssociationSet>
+    <FunctionImport Name="CreateBooking">
+      <Parameter Name="mail" Mode="In" Type="String" />
+      <Parameter Name="FlightNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="CreateFlight">
+      <Parameter Name="FromCity" Mode="In" Type="String" />
+      <Parameter Name="ToCity" Mode="In" Type="String" />
+      <Parameter Name="DepartureDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ArrivalDate" Mode="In" Type="DateTime" />
+      <Parameter Name="StopOver" Mode="In" Type="Boolean" />
+      <Parameter Name="status" Mode="In" Type="String" />
+      <Parameter Name="Company" Mode="In" Type="String" />
+      <Parameter Name="idRoute" Mode="In" Type="Int32" />
+      <Parameter Name="AirplaneName" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
