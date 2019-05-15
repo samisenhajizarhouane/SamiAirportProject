@@ -20,6 +20,8 @@ namespace AirportLogicTier
             this.tbl_Booking = new HashSet<tbl_Booking>();
         }
     
+        
+
         public int idtbl_Flight { get; set; }
         public string FlightNumber { get; set; }
         public int FromCity { get; set; }
@@ -40,5 +42,10 @@ namespace AirportLogicTier
         public virtual ICollection<tbl_Booking> tbl_Booking { get; set; }
         public virtual tbl_Company tbl_Company { get; set; }
         public virtual tbl_Route tbl_Route { get; set; }
+
+
+
+
+
     }
 }

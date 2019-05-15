@@ -7,3 +7,13 @@ C:\Users\SSE\Source\Repos\SamiAirportProject\AirportLogicTier\bin\Debug\EntityFr
 C:\Users\SSE\Source\Repos\SamiAirportProject\AirportLogicTier\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\SSE\Source\Repos\SamiAirportProject\AirportLogicTier\obj\Debug\AirportLogicTier.dll
 C:\Users\SSE\Source\Repos\SamiAirportProject\AirportLogicTier\obj\Debug\AirportLogicTier.pdb
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\bin\Debug\AirportLogicTier.dll.config
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\bin\Debug\AirportLogicTier.dll
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\bin\Debug\AirportLogicTier.pdb
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\bin\Debug\EntityFramework.dll
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\bin\Debug\EntityFramework.xml
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\obj\Debug\AirportLogicTier.csprojResolveAssemblyReference.cache
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\obj\Debug\AirportLogicTier.dll
+C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\AirportLogicTier\obj\Debug\AirportLogicTier.pdb
