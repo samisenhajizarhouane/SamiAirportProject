@@ -122,12 +122,6 @@ C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\W
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\EntityFramework.dll
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\EntityFramework.SqlServer.dll
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.Web.dll
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.ApplicationInsights.dll
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\System.Web.Helpers.dll
@@ -139,11 +133,6 @@ C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\W
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\AirportLogicTier.pdb
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\EntityFramework.xml
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\EntityFramework.SqlServer.xml
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.Web.xml
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.ApplicationInsights.xml
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\System.Web.Razor.xml
 C:\Users\SSE\Source\Workspaces\Workspace\SamiAirportProject\SamiAirportProject\WebAirport\bin\System.Web.Webpages.xml

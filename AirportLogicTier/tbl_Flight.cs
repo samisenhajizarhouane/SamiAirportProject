@@ -14,14 +14,16 @@ namespace AirportLogicTier
     
     public partial class tbl_Flight
     {
+
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tbl_Flight()
         {
             this.tbl_Booking = new HashSet<tbl_Booking>();
         }
-    
-        
 
+
+        public db_AirportEntities db;
         public int idtbl_Flight { get; set; }
         public string FlightNumber { get; set; }
         public int FromCity { get; set; }
@@ -44,6 +46,38 @@ namespace AirportLogicTier
         public virtual tbl_Route tbl_Route { get; set; }
 
 
+        public IList<tbl_Flight> getDepartures()
+        {
+            db_AirportEntities db = new db_AirportEntities();
+            IList<tbl_Flight> flights = new List<tbl_Flight>();
+            foreach (var Flight in db.tbl_Flight)
+            {
+                if (Flight.FromCity.Equals(1217))
+                flights.Add(Flight);
+            }
+            return flights;
+        }
+        public IList<tbl_Flight> getArrives()
+        {
+            db_AirportEntities db = new db_AirportEntities();
+            IList<tbl_Flight> flights = new List<tbl_Flight>();
+            foreach (var Flight in db.tbl_Flight)
+            {
+                if (Flight.ToCity.Equals(937))
+                    flights.Add(Flight);
+            }
+            return flights;
+        }
+        public IList<tbl_Flight> getAll()
+        {
+            db_AirportEntities db = new db_AirportEntities();
+            IList<tbl_Flight> flights = new List<tbl_Flight>();
+            foreach (var Flight in db.tbl_Flight)
+            {                    
+                    flights.Add(Flight);
+            }
+            return flights;
+        }
 
 
 

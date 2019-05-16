@@ -15,20 +15,26 @@ namespace WebAirport.Controllers
         private db_AirportEntities db = new db_AirportEntities();
 
         // GET: Home
-        public ActionResult Index()
+        public ActionResult IndexD()
         {
-            List<tbl_Flight> a = new List<tbl_Flight>();
-            //testCommit
-           // var tbl_Flight = db.tbl_Flight.Include(t => t.tbl_Airplane).Include(t => t.tbl_Airport).Include(t => t.tbl_Airport1).Include(t => t.tbl_Company).Include(t => t.tbl_Route);
-            foreach (var Flight in db.tbl_Flight)
-            {
-              //  if (Flight.FromCity.Equals(1217))
-                a.Add(Flight);
-            }
-            return View(a.ToList());
+           tbl_Flight a = new tbl_Flight();
+            return View(a.getDepartures().ToList());
         }
 
-
+        public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult ListVols()
+        {
+            tbl_Flight a = new tbl_Flight();
+            return View(a.getAll().ToList());
+        }
+        public ActionResult IndexA()
+        {
+            tbl_Flight a = new tbl_Flight();
+            return View(a.getArrives().ToList());
+        }
 
 
         // GET: Home/Details/5
@@ -103,6 +109,8 @@ namespace WebAirport.Controllers
             ViewBag.idRoute = new SelectList(db.tbl_Route, "idRoute", "idRoute", tbl_Flight.idRoute);
             return View(tbl_Flight);
         }
+
+
 
         // POST: Home/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
